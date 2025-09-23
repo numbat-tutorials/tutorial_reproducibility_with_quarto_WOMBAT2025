@@ -797,14 +797,14 @@ This will:
 💡 Save as: `references.bib`
 
 
-### 2. Link the `.bib` File in YAML
+### 1. Link the `.bib` File in YAML
 
 ```yaml
 bibliography: references.bib
 csl: apa.csl  # Optional: adds citation style (e.g., APA, IEEE)
 ```
 
-### 3. Cite in the Text
+### 2. Cite in the Text
 
 ```markdown
 As shown in recent work [@smith2021], the method is effective.
