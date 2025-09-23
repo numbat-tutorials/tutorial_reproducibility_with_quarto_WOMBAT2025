@@ -1,7 +1,7 @@
 ---
-title: "Reproducible data analysis reports"
+title: "Writing academically with Quarto"
 author: 
-  - name: "Krisanat Anukarnsakulchularp"
+  - name: "Jayani P. G. Lakshika"
 institute: "Department of Econometrics and Business Statistics, Monash University, Australia."
 format: 
   revealjs:
@@ -12,12 +12,12 @@ format:
     height: 750
     slide-number: c/t
 title-slide-attributes: 
-  data-background-image: "https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session1/images/bg-10.png"
+  data-background-image: "https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/session1/images/bg-10.png"
   data-background-size: contain
   data-background-position: "justify"
 template-partials:
   - style/title-slide.html 
-footer: "[Reproducibility with Quarto](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/)"
+footer: "[Writing academically with Quarto](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/)"
 ---
 
 ```{r}
@@ -68,29 +68,11 @@ options(
 
 :::: {.columns}
 
-::: {.column width = "33.33%"}
+::: {.column width = "50%"}
 
 ::: {.smaller}
 
-**Session 1**: Reproducible data analysis reports
-
-:::
-
-![](images/krisanat.png){.profile}
-
-::: {.smaller}
-
-Krisanat Anukarnsakulchularp
-
-:::
-
-:::
-
-::: {.column width = "33.33%"}
-
-::: {.smaller}
-
-**Session 2**: Writing academically
+**Session 1**: Writing academically
 
 :::
 
@@ -104,19 +86,19 @@ P. G. Jayani Lakshika
 
 :::
 
-::: {.column width = "33.33%"}
+::: {.column width = "50%"}
 
 ::: {.smaller}
 
-**Session 3**: Engaging reproducible presentations 
+**Session 2**: Engaging reproducible presentations
 
 :::
 
-![](images/janith.jpg){.profile}
+![](images/krisanat.png){.profile}
 
 ::: {.smaller}
 
-Janith Wanniarachchi
+Krisanat Anukarnsakulchularp
 
 :::
 
