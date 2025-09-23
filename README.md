@@ -1,6 +1,6 @@
-# Reproducible reporting, academic papers, presentations and theses with quarto
+# Reproducible Reporting and Research with Quarto
 
-Website: [https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/)
+Website: [https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/)
 
 In an era where transparency, collaboration, and reproducibility are central to 
 trustworthy research and data-driven decision-making, the ability to produce 
@@ -18,8 +18,6 @@ share, and more impactful.
 - [Krisanat Anukarnsakulchularp](https://krisanata.github.io/personal-website/) is a first year PhD student. He is working on a graph data structure to help betters understand and explore the spatio-temporal multivariate network data. 
 
 - [Jayani Lakshika](https://jayanilakshika.netlify.app/) is a final year PhD student. She is working on methods to help decide on the best nonlinear low dimensional representation of high dimensional data, and is the author of several R packages.
-
-- [Janith Wanniarachchi](https://janithwanni.netlify.app/) is a second year PhD student. Previously he has worked at Appsilon as an R/Shiny Developer and as a software developer in the data science industry. His current research is on building interactive tools to understand how AI models work.
 
 The team is being mentored for this tutorial by [Professor Di Cook](https://www.dicook.org).
 
