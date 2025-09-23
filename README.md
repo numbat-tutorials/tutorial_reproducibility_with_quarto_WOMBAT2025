@@ -97,7 +97,7 @@ install.packages(c("tidyverse",
 2. Setup your editor of choice to work with Quarto (syntax highlighting, renders and previews, etc.)
 -->
 
-Copyright: Krisanat Anukarnsakulchularp,  Jayani Lakshika, Janith Wanniarachchi 2025
+Copyright: Krisanat Anukarnsakulchularp,  Jayani Lakshika 2025
 
 These materials are licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
