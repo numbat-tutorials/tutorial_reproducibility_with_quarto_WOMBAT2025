@@ -1,0 +1,7 @@
+project:
+  type: default 
+  render: 
+    - index.qmd
+  preview:
+    port: 6969
+    browser: false

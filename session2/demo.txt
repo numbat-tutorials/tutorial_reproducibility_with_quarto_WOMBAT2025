@@ -1,0 +1,30 @@
+JOURNAL ARTICLE
+
+1. Create a new R project
+2. In the terminal window,
+
+quarto use template quarto-journals/jss
+
+which will ask some questions, so answer like this:
+
+? Do you trust the authors of this template (Y/n) › Yes
+? Create a subdirectory for template? (Y/n) › Yes
+? Directory name: › paper
+
+? Would you like to continue (Y/n) › Yes
+
+3. This creates the "paper" folder.
+Let's take a look at what it holds.
+
+4. You'll want to open the paper.qmd file, into the RStudio text editor.
+
+5. Typeset the paper by clicking "Render".
+Notice that the paper.pdf file is written, which we can open.
+(Also notice that it saves the paper.tex file which is the intermediate
+file that generates the final pdf - don't edit this file.)
+
+6. Now we can start to make modifications. These include:
+
+- adding figures and making the hyperlink
+- adding references and making hyperlinks
+

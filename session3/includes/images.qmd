@@ -1,0 +1,23 @@
+--- 
+title: "" 
+format: revealjs
+--- 
+
+## Showing images is the same as reports
+
+![Eevee](../img/eevee.jpg){.r-stretch width=64px fig-alt="The pokemon Eevee, a cat like animal with long pointy ears, wearing a flower"}
+
+## Absolute positioning images 
+
+![](../img/eevee-small.png){.absolute top=200 left=0 width="350" height="300"}
+
+![](../img/eevee-small.png){.absolute top=50 right=50 width="450" height="250"}
+
+![](../img/eevee-small.png){.absolute bottom=0 right=50 width="300" height="300"}
+
+## Zoom in to images 
+
+![](../img/eevee.jpg){fig-alt="The pokemon Eevee, a cat like animal with long pointy ears, wearing a flower"}
+
+Use the `Alt` key to zoom in to images or areas of the presentation
+

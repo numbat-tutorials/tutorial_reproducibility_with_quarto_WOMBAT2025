@@ -1,0 +1,694 @@
+---
+title: "Reproducible data analysis reports"
+author: 
+  - name: "Krisanat Anukarnsakulchularp"
+institute: "Department of Econometrics and Business Statistics, Monash University, Australia."
+format: 
+  revealjs:
+    theme: [default, _extensions/EmilHvitfeldt/letterbox/letterbox.scss, _extensions/numbats/monash/assets/monash.scss, _extensions/mitchelloharawild/custom-callouts/resources/css/custom-callouts.scss]
+    css: [style/custom.css]
+    include-after-body: _extensions/EmilHvitfeldt/letterbox/theme.html
+    width: 1280
+    height: 750
+    slide-number: c/t
+title-slide-attributes: 
+  data-background-image: "https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session1/images/bg-10.png"
+  data-background-size: contain
+  data-background-position: "justify"
+template-partials:
+  - style/title-slide.html 
+footer: "[Reproducibility with Quarto](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/)"
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# set width of code output
+options(width = 65)
+
+# set plot defaults
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 14))
+
+# set figure parameters for knitr
+# knitr::opts_chunk$set(
+#   out.width = "80%",
+#   fig.width = 8,        # 7" width
+#   fig.asp = 0.618,      # the golden ratio
+#   fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+#   fig.align = "center", # center align figures
+#   dpi = 300,             # higher dpi, sharper image
+#   code.line.numbers = FALSE,
+#   comment = " "
+# )
+
+knitr::opts_chunk$set(
+  fig.width = 5,
+  fig.height = 5,
+  fig.align = "center",
+  out.width = "100%",
+  code.line.numbers = FALSE,
+  fig.retina = 4,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  cache = FALSE,
+  dev.args = list(pointsize = 11)
+)
+
+options(
+  dplyr.print_min = 6, 
+  dplyr.print_max = 6
+)
+```
+
+# Introduction
+
+## Presenters:
+
+:::: {.columns}
+
+::: {.column width = "33.33%"}
+
+::: {.smaller}
+
+**Session 1**: Reproducible data analysis reports
+
+:::
+
+![](images/krisanat.png){.profile}
+
+::: {.smaller}
+
+Krisanat Anukarnsakulchularp
+
+:::
+
+:::
+
+::: {.column width = "33.33%"}
+
+::: {.smaller}
+
+**Session 2**: Writing academically
+
+:::
+
+![](images/jayani.png){.profile}
+
+::: {.smaller}
+
+P. G. Jayani Lakshika
+
+:::
+
+:::
+
+::: {.column width = "33.33%"}
+
+::: {.smaller}
+
+**Session 3**: Engaging reproducible presentations 
+
+:::
+
+![](images/janith.jpg){.profile}
+
+::: {.smaller}
+
+Janith Wanniarachchi
+
+:::
+
+:::
+
+::::
+
+## 💻 📃 What is reproducible research?
+
+<br><br>
+
+**The National Academies of Science, Engineering and Medicine in the USA says:**
+
+> *Reproducibility means obtaining consistent results using the same input data, computational steps, methods, code and conditions of analysis*.
+
+<br><br><br><br>
+
+::: {.f50}
+
+[Reference: Report on reproducibility and replicability](https://www.nap.edu/read/25303/chapter/1#xix)
+
+:::
+
+## Why?
+
+:::{.incremental}
+
+- **Efficiency**: allow changes to be implemented more easily, especially for dynamic reproducible documents.
+
+- **Repeatability**: the analysis can be repeated multiple times while still obtaining the same results.
+
+- **Transparency**: everything is available for access, resulting in more trustworthy results.
+
+- **Easy to update**: when new data arrives, the report can be automatically updated.
+
+:::
+
+:::{.fragment}
+
+*And future you will thank you, because they will know what past you was thinking*. It helps memory, collaboration, and sharing.
+
+:::
+
+## How might the project look?
+
+![](images/environmental-data-science-r4ds-general.png){width="70%" fig-align="center"}
+
+::: {.f50}
+[Source: Julia Lowndes, useR! 2019 keynote](https://openscapes.org/blog/2019-08-22-user-keynote/)
+:::
+
+## How to combine text and data analysis?
+
+<br>
+
+::: {.callout-note}
+## Literate programming
+
+Literate programming is an approach to writing reports using software that weaves together the source code and text at the time of creation.
+:::
+
+::: {.smaller}
+
+Reproducibility requires more than literate programming. These are:
+
+- a versioning and sharing system, like GitHub and git. 
+- software environment supporting workflows such as [targets](https://docs.ropensci.org/targets/) or [renv](https://rstudio.github.io/renv/articles/renv.html).
+
+*But these are for future workshops.* 
+
+:::
+
+
+## Dynamics documents 
+
+- A dynamic document includes **code** used for data analysis and **text** explaining the analysis and results.
+
+- These two things produce a **report**, a **paper**, or **presentation** sequentially and dynamically, and possibly different output formats, html, pdf, docx, ppt, by changing one line in the file. 
+
+:::{.fragment}
+
+More on papers and presentations in the next sessions! *Here we focus on reports!*
+
+:::
+
+
+## Main tools for reproducible research
+
+- **R**: the programming language.
+
+- **RStudio**: an integrated developer environment (IDE).
+
+- **Quarto**: tools for writing a complete analysis, and combines text and code together.
+
+::: {.smaller}
+Similar tools are available in other languages, and Quarto can contain code chunks of various languages, possibly in the same document.
+:::
+
+# Getting started 
+
+## [First step]{style="color:#006DAE;"}
+
+:::{.callout-caution}
+
+## Practicing
+
+1. Create a project.
+
+2. Create a quarto document.
+
+3. Render document.
+
+Your turn!
+
+:::
+
+
+## Elements of a reproducible project
+
+- All the elements of the project should be files.
+- All files should be stored within the project location (typically a folder).
+- All files should be explicitly tied together.
+
+:::{.fragment}
+
+But how do we tie the files together?
+
+:::
+
+
+## Computer paths
+
+A path is the complete location or name of where a computer file, directory, or web page is located.
+
+Examples:
+
+- `Windows: C:\\Documents\\workshop`
+- `Mac/Linux: /Users/Documents/workshop`
+- `Internet: https://numbat.space/`
+
+
+## Absolute and Relative paths
+
+- **Absolute**: start from the lowest level, typically a drive letter or root (/)
+  - `/Users/Documents/workshop` ⚠️
+
+- **Relative**: refers to a location that is relative to the current directory. 
+  - `./workshop`
+
+::: {.callout-important}
+Absolute paths should be avoided since it is extremely unlikely another person will have the same absolute path as you.
+:::
+
+
+## Work projects
+
+- **Data folder**: contains all the data for the project.
+- **Images/Figures folder**: contains all the external pictures not produced by the code in the qmd file.
+- `.Rproj` file: automatically added when creating an RStudio project (handles the relative paths and working directories).
+- `qmd` file: quarto document
+- Other `R` scripts, etc...
+
+![](images/project-example.jpg)
+
+::: {.f50}
+[Source: ETC5513 - Collaborative and Reproducible Practices](https://rcp.numbat.space/week2/#/rstudio-project-example)
+:::
+
+
+## [Your turn!]{style="color:#006DAE;"}
+
+:::{.callout-caution}
+
+## Practicing 
+
+Let's fill up our work projects.
+
+:::
+
+
+# Quarto details
+
+## Quarto
+
+- Provides a framework for integrating code and text into a single document.
+
+- The code is written within the code chunks, put the text around that, and get a fully reproducible document.
+
+![](images/quarto.svg){fig-align="center" width="20%" height="20%"}
+
+::: {.f50}
+[Source: GitHub - RStudio hex stickers](https://github.com/rstudio/hex-stickers)
+:::
+
+
+## Quarto document elements
+
+1. **Text** (formatted with Markdown)
+
+2. **Code** (code formatting)
+
+3. **Metadata** (YAML)
+
+![](images/quarto-elements.png){fig-align="center"}
+
+::: {.f50}
+[Source: Quarto Cheatsheets](https://rstudio.github.io/cheatsheets/quarto.pdf)
+:::
+
+
+## Dynamic documents
+
+Quarto + `knitr` = Dynamic document
+
+- Quarto allows the use of Markdown for writing **text** in the report and also to include **R code**.
+- `knitr` runs all code chunks, and "knit" the results into a markdown file (replacing R chunks with output).
+- `pandoc` is used to convert the markdown file to different output formats.
+
+
+## Quarto: text (Markdown)
+
+Markdown is a lightweight markup language for adding formatting elements to plain text documents.
+
+- Text formatting
+- Headings 
+- Links & Images
+- Lists
+- Many more...
+
+
+## Text formatting & Headings
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Markdown Syntax:
+
+```markdown
+*italics*, _italics_
+
+**bold**, __bold__
+
+***bold italics***, ___bold italics___
+
+~~strikethrough~~
+
+`verbatimcode`
+
+# Heading 1
+
+## Heading 2
+```
+:::
+
+::: {.column width="50%"}
+Results:
+
+::: {.smaller}
+*italics*, _italics_
+
+**bold**, __bold__
+
+***bold italics***, ___bold italics___
+
+~~strikethrough~~
+
+`verbatimcode`
+:::
+
+### Heading 1
+
+#### Heading 2
+
+:::
+
+::::
+
+
+## Links, Images, and Lists
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Markdown Syntax:
+
+```markdown
+[More quarto](https://quarto.org)
+
+![](images/profile.png)
+
+* unordered list
+    
+1. ordered list
+```
+:::
+
+::: {.column width="50%"}
+Results:
+
+::: {.smaller}
+[More quarto](https://quarto.org)
+
+![](images/profile.png){width="20%" fig-align="left"}
+
+* unordered list
+
+<br>
+
+1. ordered list
+:::
+
+:::
+::::
+
+## [Your turn!]{style="color:#006DAE;"}
+
+::: {.callout-caution}
+## Practicing
+
+1. Create different heading levels.
+2. Write 1-2 sentences with different text formatting.
+3. Add images.
+:::
+
+
+## Quarto: code (R)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+R code:
+
+````
+```{{r}}
+#| echo: false
+
+1+1
+``` 
+````
+
+:::
+
+::: {.column width="50%"}
+
+Results:
+
+```{r}
+#| echo: false
+
+1 + 1
+```
+
+:::
+
+::::
+
+Insert an R code chunk into a Quarto document with:
+
+- Keyboard short cut Ctrl + Alt + I (Mac: Cmd + Option + I)
+
+- Typing the chunk delimiters (```)
+
+Chunk output can be customised with **Chunk execution options**, which are at the top of a chunk, starting with `#|`
+
+
+## Chunk execution options
+
+- `eval: false` does not evaluate (run) this code chunk when knitting.
+- `echo: false` does not show the source code in the finished file.
+- `include: false` prevents code and results from showing in the finished file.
+- `message: false` prevents messages that are generated by code from showing in the finished file.
+- `warning: false` prevents warnings that are generated from showing in the finished file
+- `fig.cap = "Text"` adds a caption to a figure
+
+There are many more; see Quarto documentation.
+
+
+## Tables and captions
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+R code:
+
+````
+```{{r}}
+#| echo: false
+
+library(ggplot2)
+
+data(cars)
+
+table_data <- head(cars, 5)
+
+knitr::kable(table_data,
+             caption = "Speed and stopping 
+             distances of cars")
+``` 
+````
+
+:::
+
+::: {.column width="50%"}
+
+Results:
+
+::: {width="50%"}
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+data(cars)
+
+table_data <- head(cars, 5)
+
+knitr::kable(table_data,
+             caption = "Speed and stopping 
+             distances of cars") |> 
+  kableExtra::kable_paper(
+    full_width = TRUE
+    )
+```
+
+:::
+
+:::
+
+::::
+
+
+## Figures and captions
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+R code:
+
+````
+```{{r}}
+#| fig-label: cars-plot
+#| fig-cap: "Distance taken for a car to stop, against it's speed during the test."
+
+library(ggplot2)
+
+ggplot(cars,
+      aes(x = speed,
+          y = dist)
+      ) +
+  geom_point()
+``` 
+````
+
+:::
+
+::: {.column width="50%"}
+
+Results:
+
+::: {width="50%"}
+
+```{r}
+#| fig-label: cars-plot
+#| fig-cap: "Distance taken for a car to stop, against it's speed during the test."
+#| fig-height: 3
+
+library(ggplot2)
+
+ggplot(cars,
+      aes(x = speed,
+          y = dist)
+      ) +
+  geom_point()
+```
+
+:::
+
+:::
+
+::::
+
+
+## [Your turn!]{style="color:#006DAE;"}
+
+:::{.callout-caution}
+## Practicing
+
+Using the diamonds data from the ggplot2 package, do the following:
+
+1. Add a table with a caption
+
+2. Add figures with a caption
+
+:::
+
+
+
+
+
+## Quarto: YAML
+
+Basic YAML syntax
+
+```yaml
+title: "My report"
+author: "Krisanat A."
+format:
+  html:
+    toc: true
+    theme: solar
+  pdf:
+    toc: true
+```
+
+
+## HTML result
+
+![](images/html-example.png){fig-align="center"}
+
+
+## PDF result
+
+![](images/pdf-example.png){fig-align="center"}
+
+
+## [Your turn!]{style="color:#006DAE;"}
+
+:::{.callout-caution}
+## Practice
+
+1. Change the title
+2. Add your name as an author
+3. Use HTML and PDF format
+:::
+
+
+# Quarto templates
+
+## What is a quarto template?
+
+The templates provide a straightforward way to get started with new Quarto projects by providing example content and options.
+
+:::{.incremental}
+
+1. Create a working initial document for custom formats
+
+2. Provide the initial content for a custom project type
+
+:::
+
+:::{.fragment}
+
+Remember all the painstaking work we did earlier, setting YAML, creating all the folders, and setting the execution options.
+
+:::
+
+:::{.fragment}
+
+All of that can be gone with one line in the terminal!!
+
+:::
+
+
+## Using a template
+
+The command below copies the contents from the GitHub repository to our local system.
+
+`quarto use template numbat-tutorials/workshop-template`
+
+
+# Let's take a 10-minute break

@@ -1,0 +1,16 @@
+/*-- scss:defaults --*/
+
+$body-bg: #ffe3bb;
+$body-color: green;
+$link-color: #42affa;
+$font-family-sans-serif: "Arial", sans-serif;
+$presentation-font-size-root: 64px;
+$presentation-heading-font: "Times New Roman", serif;
+$presentation-heading-color: red;
+$presentation-heading-text-shadow: #fc0 1px 0 10px;
+
+/*-- scss:rules --*/
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}

@@ -1,0 +1,32 @@
+---
+title: "Code output"
+format: revealjs
+---
+
+## Code output {auto-animate="true"}
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false 
+
+library(tidyverse)
+
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point()
+```
+
+## Code animated {auto-animate="true"}
+
+
+```{r}
+#| echo: true
+#| warning: false
+#| message: false 
+
+ggplot(diamonds, aes(x = carat, y = price)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "We need diamonds with more carrots")
+```
+

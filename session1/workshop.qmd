@@ -1,0 +1,77 @@
+---
+title: "My report"
+author: "Krisanat A."
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+
+![](https://krisanata.github.io/personal-website/images/profile.png)
+
+asdfasdlkfjasdlfkja;sdlkfj;lasdkfj;laksjdfa;lsdkfj
+
+
+# This is heading 1
+
+## This is heading 2
+
+This is **bold** text.
+
+```{r}
+#| eval: false
+1 + 1
+```
+
+
+```{r}
+#| echo: false
+#| tbl-cap: "Speed and stopping distances of cars"
+
+library(ggplot2)
+
+data(cars)
+
+table_data <- head(cars, 5)
+
+knitr::kable(table_data)
+``` 
+
+
+```{r}
+#| label: fig-cars
+#| fig-cap: "Distance taken for a car to stop, against it's speed during the test."
+
+library(ggplot2)
+
+ggplot(cars,
+      aes(x = speed,
+          y = dist)
+      ) +
+  geom_point()
+``` 
+
+@fig-cars 
