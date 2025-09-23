@@ -767,7 +767,165 @@ Jayani P. G. Lakshika
 <h2>Using a template</h2>
 <p>The command below copies the contents from the GitHub repository to our local system.</p>
 <p><code>quarto use template numbat-tutorials/workshop-template</code></p>
+</section>
+<section id="quarto-template-for-journal-paper" class="slide level2">
+<h2>📝 Quarto Template for Journal Paper</h2>
+<p>With <strong>Quarto</strong>, you can create fully formatted and reproducible journal articles with ease.</p>
+<p>You have two options:</p>
+<ul>
+<li>✨ <strong>Start fresh</strong> using a journal-specific template.</li>
+<li>🔧 <strong>Apply the format</strong> to an existing Quarto project.</li>
+</ul>
+<p>In this workshop, we will use the official template for the <strong><em>Journal of Statistical Software (JSS)</em></strong>.</p>
+<p>This template includes:</p>
+<ul>
+<li>A pre-configured YAML header</li>
+<li>Sample <code>.qmd</code> content</li>
+<li>A bibliography file (<code>references.bib</code>)</li>
+</ul>
+<p>You’ll be able to write, cite, and format your article — ready for submission — all in Quarto!</p>
+</section>
+<section id="lets-begin" class="slide level2">
+<h2>🚀 Let’s Begin…</h2>
+<h3 id="creating-a-new-article">🆕 Creating a New Article</h3>
+<p>To start a new article using the <strong>Journal of Statistical Software (JSS)</strong> template, run this command in your terminal or RStudio console:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">quarto</span> use template quarto-journals/jss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will:</p>
+<ul>
+<li><p>Install the JSS extension</p></li>
+<li><p>Create a new folder with:</p>
+<ul>
+<li>A sample <code>.qmd</code> file</li>
+<li>A sample bibliography (<code>references.bib</code>)</li>
+</ul></li>
+</ul>
+<p>You’ll be ready to write your article right away!</p>
+</section>
+<section class="slide level2">
+
+<h3 id="applying-the-format-to-an-existing-project">🛠️ Applying the Format to an Existing Project</h3>
+<p>Already have a Quarto document or project? Install the JSS format with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="ex">quarto</span> add quarto-journals/jss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, update your YAML header to use the new format.</p>
+<p>✅ Now you’re ready to write and render in the JSS style!</p>
+<!-- ### Resource to find journal templates -->
+<!-- https://github.com/quarto-journals -->
+</section>
+<section id="lets-try-it-together" class="slide level2">
+<h2>🧪 <span style="color:#006DAE;">Let’s Try It Together!</span></h2>
+<p>Now it’s your turn to try creating a Quarto journal article using the <strong>JSS template</strong>.</p>
+<h3 id="steps-to-follow">🧭 Steps to Follow</h3>
+<ol type="1">
+<li><strong>Open RStudio or your terminal</strong></li>
+<li>Run this command to create a new project:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="ex">quarto</span> use template quarto-journals/jss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li><p>Open the new folder and locate:</p>
+<ul>
+<li><code>index.qmd</code> (main article)</li>
+<li><code>references.bib</code> (sample bibliography)</li>
+</ul></li>
+<li><p>Click <strong>Render</strong> to preview the document as PDF or HTML</p></li>
+</ol>
+<p>🙋 Raise your hand or drop a question if you need help!</p>
+</section>
+<section id="monash-quarto-thesis-template" class="slide level2">
+<h2>🎓 Monash Quarto Thesis Template</h2>
+<p>The <strong>Monash Quarto Thesis Template</strong> helps you create a well-structured, submission-ready thesis following Monash University guidelines.</p>
+<h3 id="create-a-new-thesis-project">🆕 Create a New Thesis Project</h3>
+<p>To get started, run the following command in your terminal or RStudio console:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">quarto</span> use template quarto-monash/thesis</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will:</p>
+<ul>
+<li><p>Install the Monash thesis extension</p></li>
+<li><p>Create a new project folder with:</p>
+<ul>
+<li>A pre-configured <code>index.qmd</code></li>
+<li>Chapter files (<code>chapters/</code>)</li>
+<li>Front matter and bibliography</li>
+<li>A ready-to-render thesis structure</li>
+</ul></li>
+</ul>
+<!-- 📘 You'll be ready to start writing your thesis with Monash-compliant formatting right out of the box! -->
+</section>
+<section id="adding-a-bibliography-to-.qmd-files" class="slide level2">
+<h2>📚 Adding a Bibliography to <code>.qmd</code> Files</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href=""></a><span class="fu">### 1. Create a `.bib` File (BibTeX Format)</span></span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a><span class="in">```bibtex</span></span>
+<span id="cb12-4"><a href=""></a><span class="in">@article{smith2021,</span></span>
+<span id="cb12-5"><a href=""></a><span class="in">  title = {A Method for Data Analysis},</span></span>
+<span id="cb12-6"><a href=""></a><span class="in">  author = {Smith, Jane},</span></span>
+<span id="cb12-7"><a href=""></a><span class="in">  journal = {Journal of Statistics},</span></span>
+<span id="cb12-8"><a href=""></a><span class="in">  year = {2021}</span></span>
+<span id="cb12-9"><a href=""></a><span class="in">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>💡 Save as: <code>references.bib</code></p>
+<h3 id="link-the-.bib-file-in-yaml">2. Link the <code>.bib</code> File in YAML</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb13-2"><a href=""></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> apa.csl</span><span class="co">  # Optional: adds citation style (e.g., APA, IEEE)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="cite-in-the-text">3. Cite in the Text</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a>As shown in recent work <span class="co">[</span><span class="ot">@smith2021</span><span class="co">]</span>, the method is effective.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>🔄 Quarto will automatically format the in-text citation and generate a reference list.</p>
+<!-- ### 🔍 Tips -->
+<!-- * Download CSL files from [zotero.org/styles](https://www.zotero.org/styles) -->
+<!-- * You can also use reference managers (Zotero, Mendeley) to export `.bib` files. -->
+<!-- * Supports multiple `.bib` files if needed. -->
+<!-- ## More exercises on adding code chunks, equations, figures, and tables -->
+<!-- PDF and HTML versions, equations and figures cross-reference, code chunks (show and hide) -->
 </section></section>
+<section>
+<section id="quarto-quirks-power-tips" class="title-slide slide level1 center">
+<h1>⚙️ Quarto Quirks &amp; Power Tips</h1>
+
+</section>
+<section class="slide level2">
+
+<h3 id="latex-equation-in-a-figure-caption">📐 LaTeX Equation in a Figure Caption</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a><span class="al">![This figure demonstrates the equation $E = mc^2$.](figure.png)</span>{#fig-einstein}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>✅ You can embed LaTeX-style equations directly using dollar signs (<code>$...$</code>) in the caption.</p>
+<p>✅ Works in both <strong>HTML</strong> and <strong>PDF</strong> outputs.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="refer-to-another-figure-in-a-caption">Refer to Another Figure in a Caption</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a><span class="al">![Here we compare this with Figure @fig-einstein.](comparison.png)</span>{#fig-compare}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>📝 <code>@fig-einstein</code> will resolve to the numbered figure reference (e.g., <em>Figure 1</em>) in PDF/HTML.</p>
+<p>📌 Make sure the first figure has an ID like <code>{#fig-einstein}</code>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="hyperlink-in-a-table">🔗 Hyperlink in a Table</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a><span class="pp">|</span> Tool   <span class="pp">|</span> Link                              <span class="pp">|</span></span>
+<span id="cb17-2"><a href=""></a><span class="pp">|--------|-----------------------------------|</span></span>
+<span id="cb17-3"><a href=""></a><span class="pp">|</span> Quarto <span class="pp">|</span> <span class="co">[</span><span class="ot">quarto.org</span><span class="co">](https://quarto.org)</span> <span class="pp">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>✅ Use standard Markdown syntax inside tables: <code>[text](url)</code></p>
+<p>✅ Works for <strong>external links</strong>, local files, and section anchors.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="alt-text-in-figure-chunk">🖼 Alt-Text in Figure Chunk</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a><span class="al">![Scatterplot of speed vs. distance](cars-plot.png)</span>{fig-alt="A scatterplot showing car stopping distances by speed."}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>✅ Use <code>fig-alt="..."</code> to improve <strong>accessibility</strong> and support screen readers.</p>
+<p>👍 Highly recommended for academic publishing and accessibility standards.</p>
+</section>
+<section id="what-we-learned" class="slide level2">
+<h2>🎯 What We Learned</h2>
+<ul>
+<li>📝 <strong>Journal Articles</strong> – You can create a JSS-formatted article using <code>quarto use template quarto-journals/jss</code>.</li>
+<li>🎓 <strong>Monash Thesis</strong> – The Monash thesis template gives you a structured, submission-ready format out of the box.</li>
+<li>📚 <strong>Citations</strong> – Bibliographies are managed with <code>.bib</code> files and citations inserted using <code>[@key]</code> syntax.</li>
+<li>📊 <strong>Code &amp; Output</strong> – Quarto lets you embed R code, equations, figures, and tables with full formatting control.</li>
+</ul>
+</section></section>
+<section id="keep-writing-and-keep-it-reproducible" class="title-slide slide level1 center">
+<h1>Keep writing and keep it reproducible 💡</h1>
+<ul>
+<li>Journal templates are <a href="https://github.com/quarto-journals/">available here</a>.</li>
+<li>Templates for monash thesis and other documents are <a href="https://github.com/quarto-monash">available here</a>.</li>
+</ul>
+</section>
+
 <section id="lets-take-a-10-minute-break" class="title-slide slide level1 center">
 <h1>Let’s take a 10-minute break</h1>
 
