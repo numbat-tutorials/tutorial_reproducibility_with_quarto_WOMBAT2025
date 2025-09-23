@@ -1,0 +1,287 @@
+---
+title: "Writing academically"
+author: 
+  - name: "Jayani P. G. Lakshika"
+institute: "Department of Econometrics and Business Statistics, Monash University, Australia."
+format: 
+  revealjs:
+    theme: [default, _extensions/EmilHvitfeldt/letterbox/letterbox.scss, _extensions/numbats/monash/assets/monash.scss, _extensions/mitchelloharawild/custom-callouts/resources/css/custom-callouts.scss]
+    css: [style/custom.css]
+    include-after-body: _extensions/EmilHvitfeldt/letterbox/theme.html
+    width: 1600
+    height: 900
+    slide-number: c/t
+title-slide-attributes: 
+  data-background-image: "https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session2/images/bg-10.png"
+  data-background-size: cover
+  data-background-position: "justify"
+template-partials:
+  - style/title-slide.html 
+footer: "[https://github.com/numbat-tutorials/tutorial_reproducibility_with_quarto](https://github.com/numbat-tutorials/tutorial_reproducibility_with_quarto.git)"
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(kableExtra)
+
+# set width of code output
+options(width = 65)
+
+# set plot defaults
+ggplot2::theme_set(ggplot2::theme_gray(base_size = 14))
+
+# set figure parameters for knitr
+# knitr::opts_chunk$set(
+#   out.width = "80%",
+#   fig.width = 8,        # 7" width
+#   fig.asp = 0.618,      # the golden ratio
+#   fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+#   fig.align = "center", # center align figures
+#   dpi = 300,             # higher dpi, sharper image
+#   code.line.numbers = FALSE,
+#   comment = " "
+# )
+
+knitr::opts_chunk$set(
+  fig.width = 5,
+  fig.height = 5,
+  fig.align = "center",
+  out.width = "100%",
+  code.line.numbers = FALSE,
+  fig.retina = 4,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  cache = FALSE,
+  dev.args = list(pointsize = 11)
+)
+
+options(
+  dplyr.print_min = 6, 
+  dplyr.print_max = 6
+)
+```
+
+## 🎯 Objectives
+
+- Understand how to use the Quarto journal and thesis templates.
+- Manage references and citations.
+- Add and customize code chunks, equations, figures, and tables in Quarto.
+
+## 📝 Quarto Template for Journal Paper
+
+With **Quarto**, you can create fully formatted and reproducible journal articles with ease.
+
+You have two options:
+
+* ✨ **Start fresh** using a journal-specific template.
+* 🔧 **Apply the format** to an existing Quarto project.
+
+
+In this workshop, we will use the official template for the ***Journal of Statistical Software (JSS)***.
+
+This template includes:
+
+* A pre-configured YAML header
+* Sample `.qmd` content
+* A bibliography file (`references.bib`)
+
+You’ll be able to write, cite, and format your article — ready for submission — all in Quarto!
+
+## 🚀 Let's Begin...
+
+### 🆕 Creating a New Article
+
+To start a new article using the **Journal of Statistical Software (JSS)** template, run this command in your terminal or RStudio console:
+
+```bash
+quarto use template quarto-journals/jss
+```
+
+This will:
+
+* Install the JSS extension
+* Create a new folder with:
+
+  * A sample `.qmd` file
+  * A sample bibliography (`references.bib`)
+
+You'll be ready to write your article right away!
+
+---
+
+### 🛠️ Applying the Format to an Existing Project
+
+Already have a Quarto document or project?
+Install the JSS format with:
+
+```bash
+quarto add quarto-journals/jss
+```
+
+Then, update your YAML header to use the new format.
+
+✅ Now you’re ready to write and render in the JSS style!
+
+
+<!-- ### Resource to find journal templates -->
+
+<!-- https://github.com/quarto-journals -->
+
+
+## 🧪 [Let's Try It Together!]{style="color:#006DAE;"}
+
+Now it's your turn to try creating a Quarto journal article using the **JSS template**.
+
+### 🧭 Steps to Follow
+
+1. **Open RStudio or your terminal**
+2. Run this command to create a new project:
+
+```bash
+quarto use template quarto-journals/jss
+```
+
+3. Open the new folder and locate:
+
+   * `index.qmd` (main article)
+   * `references.bib` (sample bibliography)
+
+4. Click **Render** to preview the document as PDF or HTML
+
+🙋 Raise your hand or drop a question if you need help!
+
+## 🎓 Monash Quarto Thesis Template
+
+The **Monash Quarto Thesis Template** helps you create a well-structured, submission-ready thesis following Monash University guidelines.
+
+### 🆕 Create a New Thesis Project
+
+To get started, run the following command in your terminal or RStudio console:
+
+```bash
+quarto use template quarto-monash/thesis
+```
+
+This will:
+
+* Install the Monash thesis extension
+* Create a new project folder with:
+
+  * A pre-configured `index.qmd`
+  * Chapter files (`chapters/`)
+  * Front matter and bibliography
+  * A ready-to-render thesis structure
+
+<!-- 📘 You'll be ready to start writing your thesis with Monash-compliant formatting right out of the box! -->
+
+## 📚 Adding a Bibliography to `.qmd` Files
+
+````markdown
+### 1. Create a `.bib` File (BibTeX Format)
+
+```bibtex
+@article{smith2021,
+  title = {A Method for Data Analysis},
+  author = {Smith, Jane},
+  journal = {Journal of Statistics},
+  year = {2021}
+}
+````
+
+💡 Save as: `references.bib`
+
+
+### 2. Link the `.bib` File in YAML
+
+```yaml
+bibliography: references.bib
+csl: apa.csl  # Optional: adds citation style (e.g., APA, IEEE)
+```
+
+### 3. Cite in the Text
+
+```markdown
+As shown in recent work [@smith2021], the method is effective.
+```
+
+🔄 Quarto will automatically format the in-text citation and generate a reference list.
+
+<!-- ### 🔍 Tips -->
+
+<!-- * Download CSL files from [zotero.org/styles](https://www.zotero.org/styles) -->
+<!-- * You can also use reference managers (Zotero, Mendeley) to export `.bib` files. -->
+<!-- * Supports multiple `.bib` files if needed. -->
+
+<!-- ## More exercises on adding code chunks, equations, figures, and tables -->
+
+<!-- PDF and HTML versions, equations and figures cross-reference, code chunks (show and hide) -->
+
+# ⚙️ Quarto Quirks & Power Tips
+
+---
+
+### 📐 LaTeX Equation in a Figure Caption
+
+```markdown
+![This figure demonstrates the equation $E = mc^2$.](figure.png){#fig-einstein}
+```
+
+✅ You can embed LaTeX-style equations directly using dollar signs (`$...$`) in the caption.
+
+✅ Works in both **HTML** and **PDF** outputs.
+
+---
+
+### Refer to Another Figure in a Caption
+
+```markdown
+![Here we compare this with Figure @fig-einstein.](comparison.png){#fig-compare}
+```
+
+📝 `@fig-einstein` will resolve to the numbered figure reference (e.g., *Figure 1*) in PDF/HTML.
+
+📌 Make sure the first figure has an ID like `{#fig-einstein}`.
+
+---
+
+### 🔗 Hyperlink in a Table
+
+```markdown
+| Tool   | Link                              |
+|--------|-----------------------------------|
+| Quarto | [quarto.org](https://quarto.org) |
+```
+
+✅ Use standard Markdown syntax inside tables: `[text](url)`
+
+✅ Works for **external links**, local files, and section anchors.
+
+---
+
+### 🖼 Alt-Text in Figure Chunk
+
+```markdown
+![Scatterplot of speed vs. distance](cars-plot.png){fig-alt="A scatterplot showing car stopping distances by speed."}
+```
+
+✅ Use `fig-alt="..."` to improve **accessibility** and support screen readers.
+
+👍 Highly recommended for academic publishing and accessibility standards.
+
+
+## 🎯 What We Learned
+
+* 📝 **Journal Articles** – You can create a JSS-formatted article using `quarto use template quarto-journals/jss`.
+* 🎓 **Monash Thesis** – The Monash thesis template gives you a structured, submission-ready format out of the box.
+* 📚 **Citations** – Bibliographies are managed with `.bib` files and citations inserted using `[@key]` syntax.
+* 📊 **Code & Output** – Quarto lets you embed R code, equations, figures, and tables with full formatting control.
+
+# Keep writing and keep it reproducible 💡
+
+- Journal templates are [available here](https://github.com/quarto-journals/).
+- Templates for monash thesis and other documents are [available here](https://github.com/quarto-monash). 
+
