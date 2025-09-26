@@ -43,7 +43,7 @@ This session will guide you through creating a reproducible project, starting wi
 
 [Workshop QMD](session1/workshop.qmd)
 
-### Session 2 (Writing academically)
+### Session 1 & 2 (Writing academically)
 
 This session guides you on creating journal papers and theses with Quarto, managing bibliographies, and adding code, equations, figures, and tables for reproducible, well-formatted documents.
 
@@ -56,7 +56,7 @@ This session guides you on creating journal papers and theses with Quarto, manag
 
 [Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session2)
 
-### Session 3 (Engaging reproducible presentations)
+### Session 2 (Engaging reproducible presentations)
 
 <!-- We will be giving an overall introduction to the different types of presentation formats but focus primarily on reveal.js presentations.  -->
 This session will be giving a high level introduction to building presentations, mainly reveal.js presentations. By the end of this session you will gain the knowledge to develop and customize engaging presentations to your needs. 
