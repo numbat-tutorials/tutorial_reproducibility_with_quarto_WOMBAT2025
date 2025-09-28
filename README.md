@@ -39,7 +39,7 @@ This session will guide you through creating a reproducible project, starting wi
 | **Quarto details**      | Learn about the Quarto document, the structure and its components, different types of outputs. Incorporating data, code chunks, plots and tables.  |
 | **Quarto templates**    | A brief introduction to templates and how to use them, and making modifications. |
 
-[Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session1)
+[Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/session1)
 
 [Workshop QMD](session1/workshop.qmd)
 
@@ -54,7 +54,7 @@ This session guides you on creating journal papers and theses with Quarto, manag
 | **Bibliography**                                                         | How to manage and format references and citations in Quarto with practical examples.           |
 | **More exercises on adding code chunks, equations, figures, and tables** | Exercises that demonstrate adding code, equations, plots, and tables in Quarto documents for reproducible research. |
 
-[Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session2)
+[Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/session1)
 
 ### Session 2 (Engaging reproducible presentations)
 
@@ -70,7 +70,7 @@ This session will be giving a high level introduction to building presentations,
 | **Theming** | Adding that personal touch to your presentations to take it from zero to fabulous. |
 | **Animations** | Introducing animations and how they can be used without too much of a hassle. |
 
-[Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session3)
+[Open slides](https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/session2)
 
 ## Getting started
 

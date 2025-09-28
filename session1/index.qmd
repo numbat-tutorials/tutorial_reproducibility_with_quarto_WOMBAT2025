@@ -1,5 +1,5 @@
 ---
-title: "Writing academically with Quarto"
+title: "Introduction to Reproducible research and Writing academically with Quarto"
 author: 
   - name: "Jayani P. G. Lakshika"
 institute: "Department of Econometrics and Business Statistics, Monash University, Australia."
@@ -167,7 +167,7 @@ Reproducibility requires more than literate programming. These are:
 - a versioning and sharing system, like GitHub and git. 
 - software environment supporting workflows such as [targets](https://docs.ropensci.org/targets/) or [renv](https://rstudio.github.io/renv/articles/renv.html).
 
-*But these are for future workshops.* 
+*But these will not be in this workshop.* 
 
 :::
 
@@ -780,6 +780,8 @@ This will:
 
 <!-- 📘 You'll be ready to start writing your thesis with Monash-compliant formatting right out of the box! -->
 
+# Let's take a 30-minute break
+
 ## 📚 Adding a Bibliography to `.qmd` Files
 
 ````markdown
@@ -887,4 +889,3 @@ As shown in recent work [@smith2021], the method is effective.
 - Journal templates are [available here](https://github.com/quarto-journals/).
 - Templates for monash thesis and other documents are [available here](https://github.com/quarto-monash). 
 
-# Let's take a 10-minute break
