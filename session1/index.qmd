@@ -8,12 +8,12 @@ format:
     theme: [default, _extensions/EmilHvitfeldt/letterbox/letterbox.scss, _extensions/numbats/monash/assets/monash.scss, _extensions/mitchelloharawild/custom-callouts/resources/css/custom-callouts.scss]
     css: [style/custom.css]
     include-after-body: _extensions/EmilHvitfeldt/letterbox/theme.html
-    width: 1280
-    height: 750
+    width: 1600
+    height: 900
     slide-number: c/t
 title-slide-attributes: 
-  data-background-image: "https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto_WOMBAT2025/session1/images/bg-10.png"
-  data-background-size: contain
+  data-background-image: "https://numbat-tutorials.github.io/tutorial_reproducibility_with_quarto/session2/images/bg-10.png"
+  data-background-size: cover
   data-background-position: "justify"
 template-partials:
   - style/title-slide.html 
@@ -755,6 +755,7 @@ quarto use template quarto-journals/jss
 4. Click **Render** to preview the document as PDF or HTML
 
 🙋 Raise your hand or drop a question if you need help!
+
 
 ## 🎓 Monash Quarto Thesis Template
 
