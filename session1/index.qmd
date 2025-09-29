@@ -543,7 +543,7 @@ R code:
 
 ````
 ```{{r}}
-#| fig-label: cars-plot
+#| label: cars-plot
 #| fig-cap: "Distance taken for a car to stop, against it's speed during the test."
 
 library(ggplot2)
@@ -565,7 +565,7 @@ Results:
 ::: {width="50%"}
 
 ```{r}
-#| fig-label: cars-plot
+#| label: cars-plot
 #| fig-cap: "Distance taken for a car to stop, against it's speed during the test."
 #| fig-height: 3
 
